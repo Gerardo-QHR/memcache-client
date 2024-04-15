@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nest_app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - memcached
+
+  memcached:
+    image: memcached:latest
+    ports:
+      - "11211:11211"
