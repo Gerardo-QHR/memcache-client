@@ -32,11 +32,9 @@ async fn get_key(
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    // Connect to Memcached instance
     let client = Client::connect("memcache://memcached:11211").unwrap();
     let client = Arc::new(Mutex::new(client));
 
-    // Start Actix web server
     HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(client.clone()))

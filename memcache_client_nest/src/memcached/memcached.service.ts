@@ -6,7 +6,7 @@ export class MemcachedService {
   private readonly client: Memcached;
 
   constructor() {
-    this.client = new Memcached('memcached:11211'); // Docker service name
+    this.client = new Memcached('memcached:11211'); 
   }
 
   async setValue(key: string, value: any, expiration: number): Promise<void> {

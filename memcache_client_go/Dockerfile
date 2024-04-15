@@ -1,4 +1,3 @@
-# Dockerfile
 FROM golang:latest
 
 WORKDIR /app
